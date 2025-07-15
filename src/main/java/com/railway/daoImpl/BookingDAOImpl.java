@@ -57,7 +57,7 @@ public class BookingDAOImpl implements BookingDAO {
                 bookingList.add(booking);
             }
         } catch (SQLException e) {
-            System.err.println("❌ Error fetching bookings by passenger: " + e.getMessage());
+            System.err.println(" Error fetching bookings by passenger: " + e.getMessage());
         }
         return bookingList;
     }
@@ -74,7 +74,7 @@ public class BookingDAOImpl implements BookingDAO {
                 bookingList.add(booking);
             }
         } catch (SQLException e) {
-            System.err.println("❌ Error fetching all bookings: " + e.getMessage());
+            System.err.println(" Error fetching all bookings: " + e.getMessage());
         }
         return bookingList;
     }
@@ -91,12 +91,11 @@ public class BookingDAOImpl implements BookingDAO {
                 bookedSeats.add(extractBooking(resultSet));
             }
         } catch (SQLException e) {
-            System.err.println("❌ Error fetching booked seats: " + e.getMessage());
+            System.err.println(" Error fetching booked seats: " + e.getMessage());
         }
         return bookedSeats;
     }
 
-    // ✅ Extracts Booking object from ResultSet
     private Booking extractBooking(ResultSet resultSet) throws SQLException {
         Booking booking = new Booking();
         booking.setId(resultSet.getInt("id"));
